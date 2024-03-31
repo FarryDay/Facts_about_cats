@@ -31,8 +31,7 @@ async fn main() {
 
   println!("------------------[ Получаем факт ]------------------");
 
-  let res_cat_api = client
-    .get(CAT_API).send().await.unwrap();
+  let res_cat_api = client.get(CAT_API).send().await.unwrap();
 
   let mut fact = match res_cat_api.status(){
     reqwest::StatusCode::OK => {
