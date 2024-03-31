@@ -45,10 +45,7 @@ async fn main() {
   println!("------------------[ Переводим ]------------------");
 
   let res_translator = client
-    .get(format!("{TRANSLATE_API}?sl=en&dl=ru&text={fact}"))
-    .send()
-    .await
-    .unwrap();
+    .get(format!("{TRANSLATE_API}?sl=en&dl=ru&text={fact}")).send().await.unwrap();
 
   fact = match res_translator.status(){
     reqwest::StatusCode::OK => {
