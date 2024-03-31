@@ -30,6 +30,7 @@ async fn main() {
   let client = reqwest::Client::new();
 
   println!("------------------[ Получаем факт ]------------------");
+
   let res_cat_api = client
     .get(CAT_API).send().await.unwrap();
 
